@@ -31,12 +31,12 @@ hub:
       admin_access: true
       authenticator_class: dummy
   service:
-    type: ClusterIP
+    type: LoadBalancer
     annotations: {}
     ports:
       nodePort:
     extraPorts: []
-    loadBalancerIP:
+    loadBalancerIP: 9.30.140.39
   baseUrl: /
   cookieSecret:
   initContainers: []
@@ -143,7 +143,7 @@ rbac:
 # proxy relates to the proxy pod, the proxy-public service, and the autohttps
 # pod and proxy-http service.
 proxy:
-  secretToken:
+  secretToken: 'aa101a3e64d249cb0ef2f654b54ac88e7583f8eedf47ca4d68517f8c11023f1a'
   annotations: {}
   deploymentStrategy:
     ## type: Recreate
